@@ -1,5 +1,7 @@
 import pygame
 
+print("I hope it will be a great game")
+
 print("I will complete this project after I pass the exam : )")
 print("Do you want to play? Yes or No?")
 A = input()
