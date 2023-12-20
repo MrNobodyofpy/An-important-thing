@@ -1,6 +1,5 @@
 import pygame
 
-print("Hello, New user")
 print("Do you want to start this program")
 Answer = Input()
 if Answer == Yes:
