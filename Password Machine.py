@@ -1,5 +1,7 @@
 import pygame
 
+Color_Screen = 0
+
 print("I hope it will be a great game")
 print("Do you want to start this program")
 Answer = Input()
@@ -16,4 +18,4 @@ elif A == "No":
     print("Bruh")
 
 else:
-    print("Wrong answer")
+    print("Wrong answer")c
