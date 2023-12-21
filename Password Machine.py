@@ -8,7 +8,6 @@ if Answer == Yes:
 else:
     print("Smart kid.")
 
-print("I will complete this project after I pass the exam : )")
 print("Do you want to play? Yes or No?")
 A = input()
 if A == "Yes":
