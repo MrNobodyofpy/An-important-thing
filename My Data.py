@@ -1,5 +1,5 @@
 import pygame
-Color_Screen = 0
+Color_Screen = 1
 
 print("I hope it will be a great game")
 print("Do you want to play? Yes or No?")
