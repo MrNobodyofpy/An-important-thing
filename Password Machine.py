@@ -1,6 +1,6 @@
 import pygame
 
-Color_Screen = 9
+Color_Screen = 1
 
 print("I hope it will be a great game")
 print("Do you want to start this program")
