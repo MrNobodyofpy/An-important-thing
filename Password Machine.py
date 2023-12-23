@@ -2,9 +2,8 @@ import pygame
 
 Color_Screen = 1
 
-print("I hope it will be a great game")
 print("Do you want to start this program")
-Answer = Input()
+Answer = Input()c
 if Answer == Yes:
     print("Hohoho, there is no program here.")
 else:
