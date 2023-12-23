@@ -1,7 +1,6 @@
 import pygame
 Color_Screen = 1
 
-print("I hope it will be a great game")
 print("Do you want to play? Yes or No?")
 A = input()
 if A == "Yes":
