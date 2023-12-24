@@ -1,5 +1,6 @@
 import pygame
 Color_Screen = 1
+va1 = "Nothing"
 
 print("Do you want to play? Yes or No?")
 A = input()
