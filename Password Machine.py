@@ -1,6 +1,8 @@
 import pygame
 
 Color_Screen = 1
+va1 = "Nothing"
+
 
 print("Do you want to start this program")
 Answer = Input()c
