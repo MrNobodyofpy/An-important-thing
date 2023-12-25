@@ -1,6 +1,5 @@
 import pygame
 
-Color_Screen = 1
 va1 = "They are not stupid"
 
 print("Do you want to start this program")
