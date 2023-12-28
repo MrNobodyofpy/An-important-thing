@@ -1,6 +1,6 @@
 import pygame
 
-va1 = "They are not stupid"
+va1 = "it's va1"
 
 print("Do you want to start this program")
 Answer = Input()c

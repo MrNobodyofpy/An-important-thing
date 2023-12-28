@@ -1,5 +1,5 @@
 import pygame
-va1 = "They are not stupid"
+va1 = "it's va1"
 
 print("Do you want to play? Yes or No?")
 A = input()
