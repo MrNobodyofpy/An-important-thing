@@ -1,6 +1,7 @@
 import pygame
 
 va1 = "it's va1"
+print("I will complete this project tomorrow : )")
 
 print("Do you want to start this program")
 Answer = Input()c
