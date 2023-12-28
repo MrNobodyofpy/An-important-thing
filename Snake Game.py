@@ -1,5 +1,5 @@
 import pygame
-va1 = "it's va1"
+va1 = "1"
 print("I will complete this project tomorrow : )")
 print("Do you want to play? Yes or No?")
 A = input()
