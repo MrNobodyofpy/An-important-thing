@@ -10,3 +10,5 @@ elif A == "No":
 
 else:
 	print("Wrong answer")
+	
+print("It will be completed : )")
