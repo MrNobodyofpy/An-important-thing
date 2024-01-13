@@ -18,4 +18,6 @@ elif A == "No":
     print("Bruh")
 
 else:
-    print("Wrong answer")c
+    print("Wrong answer")
+
+print("It will be completed : )")
