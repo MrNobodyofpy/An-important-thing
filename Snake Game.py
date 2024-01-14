@@ -1,3 +1,2 @@
 import pygame
-
-print("It will be completed : )")
+pint("It's just a game : )")
