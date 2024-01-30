@@ -2,7 +2,7 @@
 import pygame
 pygame.init()
 
-#Set the size of the "window""
+#Set the size of the "window"
 screen = pygame.display.set_mode((800,700))
 
 #Set name of colors : )

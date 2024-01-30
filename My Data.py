@@ -1,4 +1,4 @@
-#Pygame is important
+#Pygame is important :)
 import pygame
 pygame.init()
 print(" I am not sure that what should I do on this project : )")
