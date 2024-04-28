@@ -23,3 +23,4 @@ while is_running:
     pygame.display.flip()
 pygame.quit()
 print("Hello guys, to complete that project send messages for me on our Discord server : )")
+print("Hmm, some problems with git:)")
