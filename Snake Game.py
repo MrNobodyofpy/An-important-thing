@@ -22,11 +22,11 @@ while is_running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			is_running = False
+		if event.type == pygame.MOUSEBUTTONDOWN:
+			if event.button == 1:
+				#Get positon (DEVELOPER only)
+				pos = pygame.mouse.get_pos()
+				print(pos)
 
 	pygame.display.flip()
 pygame.quit()
-#Snake defualt position
-snake_position = [0, 0]
-#First snake body
-#Snake's body
-pygame.draw.rect(screen, GREEN, (100,50,50,50))
