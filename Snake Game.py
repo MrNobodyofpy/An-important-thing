@@ -20,6 +20,8 @@ is_running = True
 while is_running:
 	screen.fill(GREY)
 
+	mouse_x, mouse_y = pygame.mouse.get_pos()
+	
 	pygame.draw.rect(screen, GREEN, (100,50,35,35))
 	pygame.draw.rect(screen, RED, (200,100,20,20))
 
