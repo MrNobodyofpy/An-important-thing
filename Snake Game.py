@@ -19,7 +19,8 @@ is_running = True
 while is_running:
 	screen.fill(GREY)
 
-	pygame.draw.rect(screen, WHITE, (100,50,50,50))
+	pygame.draw.rect(screen, GREEN, (100,50,35,35))
+	pygame.draw.rect(screen, RED, (200,100,20,20))
 
 #Event while running:
 	for event in pygame.event.get():
