@@ -19,6 +19,8 @@ is_running = True
 while is_running:
 	screen.fill(GREY)
 
+	pygame.draw.rect(screen, WHITE, (100,50,50,50))
+
 #Event while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
