@@ -11,6 +11,7 @@ GREY = (120, 120, 120)
 GREEN = (0,128,0)
 RED = (255, 0, 0)
 WHITE = (255,255,255)
+BLACK = (0,0,0)
 
 #Set "is_running" turn on first : )
 is_running = True
