@@ -13,27 +13,26 @@ RED = (255, 0, 0)
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-#Set "is_running" turn on first : )
-is_running = True
+#Set "game_over" turn on first : )
+game_over = False
 
 #Start running the program : )
-while is_running:
+while not game_over:
 	screen.fill(GREY)
 
+	#DEVELOPER only
 	mouse_x, mouse_y = pygame.mouse.get_pos()
-	
-	pygame.draw.rect(screen, GREEN, (100,50,35,35))
-	pygame.draw.rect(screen, RED, (200,100,20,20))
 
 #Event while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			is_running = False
+			game_over = True
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			if event.button == 1:
 				#Get positon (DEVELOPER only)
 				pos = pygame.mouse.get_pos()
 				print(pos)
 
-	pygame.display.flip()
+	pygame.draw.rect(screen, GREEN, (400,400,35,35))
+	pygame.display.update()
 pygame.quit()
