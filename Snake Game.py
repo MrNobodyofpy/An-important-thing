@@ -10,6 +10,7 @@ screen = pygame.display.set_mode((800,700))
 GREY = (120, 120, 120)
 GREEN = (0,128,0)
 RED = (255, 0, 0)
+WHITE = (255,255,255)
 
 #Set "is_running" turn on first : )
 is_running = True
