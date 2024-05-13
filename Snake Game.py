@@ -5,6 +5,7 @@ pygame.init()
 
 #Set the size of the "window"
 screen = pygame.display.set_mode((800,700))
+pygame.display.set_caption('Snake game by David de Pear.H')
 
 #Set name of colors : )
 GREY = (120, 120, 120)
@@ -33,6 +34,6 @@ while not game_over:
 				pos = pygame.mouse.get_pos()
 				print(pos)
 
-	pygame.draw.rect(screen, GREEN, (400,400,35,35))
+	pygame.draw.rect(screen, GREEN, (377,304,35,35))
 	pygame.display.update()
 pygame.quit()
