@@ -3,6 +3,8 @@ import pygame
 import random
 pygame.init()
 
+snake_speed = 15
+
 #Set the size of the "window"
 screen_width = 800
 screen_height = 700
