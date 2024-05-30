@@ -30,11 +30,6 @@ while not game_over:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			game_over = True
-		if event.type == pygame.MOUSEBUTTONDOWN:
-			if event.button == 1:
-				#Get positon (DEVELOPER only)
-				pos = pygame.mouse.get_pos()
-				print(pos)
 
 	pygame.draw.rect(screen, GREEN, (377,304,35,35))
 	pygame.display.update()
