@@ -20,12 +20,12 @@ BLACK = (0, 0, 0)
 # Snake default position
 snake_position = [100, 50]
 
-#fruit position
+# fruit position
 fruit_position = [random.randrange(1, (screen_width//10)) * 10,
-				  random.randrange(1, (screen_height//10)) * 10]
+                  random.randrange(1, (screen_height//10)) * 10]
 
 create_fruit = True
-#Fruit from Geeks for Geeks:)
+# Fruit from Geeks for Geeks:)
 
 # Snake body
 snake_body = [[100, 50],
@@ -33,23 +33,23 @@ snake_body = [[100, 50],
               [80, 50],
               [70, 50]]
 
-#We have SCORE
+# We have SCORE
 Score = 0
 
 # Show Score for you
 def see_your_score(choice, color, font, size):
 
-	#font object
-	score_font = pygame.font.SysFont(font, size)
+    # font object
+    score_font = pygame.font.SysFont(font, size)
 
-	#display surface object
-	score_surface = score_font.render('Score: ' + str(Score), True, color)
+    # display surface object
+    score_surface = score_font.render('Score: ' + str(Score), True, color)
 
-	#rectangle object for the text
-	score_rect = score_surface.get_rect()
+    # rectangle object for the text
+    score_rect = score_surface.get_rect()
 
-	#read this text
-	game_window.blit(score_surface, score_rect)
+    # read this text
+    screen.blit(score_surface, score_rect)
 
 # Default direction
 snake_direction = 'right'
@@ -98,28 +98,31 @@ while not game_over:
     if snake_direction == 'right':
         snake_position[0] += 10
 
-    #Draw fruits
+    # Draw fruits
     if create_fruit:
         pygame.draw.rect(screen, RED, pygame.Rect(fruit_position[0], fruit_position[1], 10, 10))
 
-    #Did he eat fruits?
+    # Did he eat fruits?
     if snake_position == fruit_position:
         create_fruit = False
         fruit_position = [random.randrange(1, (screen_width//10)) * 10,
-						  random.randrange(1, (screen_height//10)) * 10]
+                          random.randrange(1, (screen_height//10)) * 10]
         create_fruit = True
         Score += 1
 
-    #You have another head
+        # You have another head
         snake_body.insert(0, list(snake_position))
+    else:
+        # Update snake body
+        snake_body.insert(0, list(snake_position))
+        snake_body.pop()
 
-    # Update snake body
-    snake_body.insert(0, list(snake_position))
-    snake_body.pop()
-
-	# Draw the snake
+    # Draw the snake
     for pos in snake_body:
-        pygame.draw.rect(screen, RED, pygame.Rect(fruit_position[0], fruit_position[1], 10, 10))
+        pygame.draw.rect(screen, GREEN, pygame.Rect(pos[0], pos[1], 10, 10))
+
+    # Show the score
+    see_your_score(None, WHITE, 'times new roman', 20)
 
     # Refresh game screen
     pygame.display.update()
