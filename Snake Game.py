@@ -1,16 +1,18 @@
 import pygame
+import time
 import random
+
 pygame.init()
 
 snake_speed = 15
 
-# Set the size of the "window"
+# Set the size of the window
 screen_width = 800
 screen_height = 700
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Snake game by David de Pear.H')
 
-# Set name of colors
+# Define colors
 GREY = (120, 120, 120)
 GREEN = (0, 128, 0)
 RED = (255, 0, 0)
@@ -20,12 +22,11 @@ BLACK = (0, 0, 0)
 # Snake default position
 snake_position = [100, 50]
 
-# fruit position
+# Fruit position
 fruit_position = [random.randrange(1, (screen_width//10)) * 10,
                   random.randrange(1, (screen_height//10)) * 10]
 
 create_fruit = True
-# Fruit from Geeks for Geeks:)
 
 # Snake body
 snake_body = [[100, 50],
@@ -33,41 +34,38 @@ snake_body = [[100, 50],
               [80, 50],
               [70, 50]]
 
-# We have SCORE
+# Initial score
 Score = 0
 
-# Show Score for you
+# Function to display the score
 def see_your_score(choice, color, font, size):
-
-    # font object
     score_font = pygame.font.SysFont(font, size)
-
-    # display surface object
     score_surface = score_font.render('Score: ' + str(Score), True, color)
-
-    # rectangle object for the text
     score_rect = score_surface.get_rect()
-
-    # read this text
     screen.blit(score_surface, score_rect)
 
 # Default direction
 snake_direction = 'right'
 change_to = snake_direction
 
-# Set "game_over" turn on first
-game_over = False
+# Game over function
+def game_over():
+    over_font = pygame.font.SysFont('times new roman', 50)
+    over_surface = over_font.render('Your score is: ' + str(Score) + '. Game Over!', True, WHITE)
+    over_rect = over_surface.get_rect()
+    over_rect.midtop = (screen_width/2, screen_height/4)
+    screen.blit(over_surface, over_rect)
+    pygame.display.flip()
+    time.sleep(3)
+    pygame.quit()
+    quit()
 
-# Start running the program
-while not game_over:
+# Main loop
+while True:
     screen.fill(GREY)
-
-    # Event while running
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            game_over = True
-
-        # Key events (Up, Down, Left, Right)
+            is_game_over = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 change_to = 'up'
@@ -78,7 +76,7 @@ while not game_over:
             if event.key == pygame.K_RIGHT:
                 change_to = 'right'
 
-    # Only one direction ok?
+    # Update the direction of the snake
     if change_to == 'up' and snake_direction != 'down':
         snake_direction = 'up'
     if change_to == 'down' and snake_direction != 'up':
@@ -98,22 +96,15 @@ while not game_over:
     if snake_direction == 'right':
         snake_position[0] += 10
 
-    # Draw fruits
-    if create_fruit:
-        pygame.draw.rect(screen, RED, pygame.Rect(fruit_position[0], fruit_position[1], 10, 10))
-
-    # Did he eat fruits?
+    # Snake eats the fruit
     if snake_position == fruit_position:
         create_fruit = False
         fruit_position = [random.randrange(1, (screen_width//10)) * 10,
                           random.randrange(1, (screen_height//10)) * 10]
         create_fruit = True
         Score += 1
-
-        # You have another head
         snake_body.insert(0, list(snake_position))
     else:
-        # Update snake body
         snake_body.insert(0, list(snake_position))
         snake_body.pop()
 
@@ -121,7 +112,11 @@ while not game_over:
     for pos in snake_body:
         pygame.draw.rect(screen, GREEN, pygame.Rect(pos[0], pos[1], 10, 10))
 
-    # Show the score
+    # Draw the fruit
+    if create_fruit:
+        pygame.draw.rect(screen, RED, pygame.Rect(fruit_position[0], fruit_position[1], 10, 10))
+
+    # Display the score
     see_your_score(None, WHITE, 'times new roman', 20)
 
     # Refresh game screen
@@ -130,4 +125,12 @@ while not game_over:
     # Frame Per Second /Refresh Rate
     pygame.time.Clock().tick(snake_speed)
 
-pygame.quit()
+    #Snake touched itself?
+    for block in snake_body[1:]:
+        if snake_position == block:
+            game_over()
+
+    # Check for game over condition
+    if snake_position[0] < 0 or snake_position[0] > screen_width-10 or \
+       snake_position[1] < 0 or snake_position[1] > screen_height-10:
+        game_over()
