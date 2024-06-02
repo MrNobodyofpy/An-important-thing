@@ -1,4 +1,3 @@
-#Pygame is important
 import pygame
 pygame.init()
 
@@ -24,3 +23,5 @@ while is_running:
 
 	pygame.display.flip()
 pygame.quit()
+
+#Now this project will be completed by me.
