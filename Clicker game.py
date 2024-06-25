@@ -12,6 +12,10 @@ GREY = (120, 120, 120)
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
+#game variables
+Click_score = 0
+Clicks = 0
+
 #Set "is_running" turn on first : )
 is_running = True
 
