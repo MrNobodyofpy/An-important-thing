@@ -2,7 +2,10 @@ import pygame
 pygame.init()
 
 #Set the size of the "window"
-screen = pygame.display.set_mode((800,700))
+window_width = 800
+window_height = 700
+screen = pygame.display.set_mode((window_width,window_height))
+pygame.display.set_caption("Clicker Game by David de Pear.H")
 
 #Set name of colors : )
 GREY = (120, 120, 120)
@@ -23,5 +26,3 @@ while is_running:
 
 	pygame.display.flip()
 pygame.quit()
-
-#Now this project will be completed by me.
