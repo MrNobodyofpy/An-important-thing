@@ -1,9 +1,20 @@
 #Pygame is important
 import pygame
+import sys
+from time import strftime
+
+#Import module
+from tkinter import *
+from tkinter.ttk import * 
+
+#Running time
 pygame.init()
 
 #Set the size of the "window"
-screen = pygame.display.set_mode((500,600))
+width = 600
+height = 600
+screen = pygame.display.set_mode((width,height))
+pygame.display.set_caption("A digital clock")
 
 #Set name of colors : )
 GREY = (120, 120, 120)
