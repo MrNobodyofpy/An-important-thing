@@ -63,4 +63,5 @@ while is_running:
         message_text = font.render(message, True, WHITE)
         screen.blit(message_text, (10, 50))
     pygame.display.update()
+    #quit time
 pygame.quit()
