@@ -1,5 +1,4 @@
 import pygame
-
 pygame.init()
 
 # Set the size of the "window"

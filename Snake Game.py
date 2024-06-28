@@ -1,7 +1,6 @@
 import pygame
 import time
 import random
-
 pygame.init()
 
 snake_speed = 15
